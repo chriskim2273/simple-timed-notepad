@@ -288,9 +288,9 @@ const TimedNotepad = () => {
           
           {/* Lines */}
           {activeNote && (
-            <div className="font-mono text-sm">
+            <div className="font-mono text-sm bg-gray-50 rounded-lg border border-gray-200 p-2">
               {lines.map((line, index) => (
-                <div key={line.id} className="flex items-start py-1 hover:bg-gray-50">
+                <div key={line.id} className="flex items-start py-1 hover:bg-gray-100">
                   <div className="w-32 pr-4 text-right text-gray-500 flex-shrink-0">
                     <div className="font-medium">{line.timestamp}</div>
                     <div className="text-xs">{line.date}</div>
@@ -301,7 +301,7 @@ const TimedNotepad = () => {
                       value={line.content}
                       onChange={(e) => updateLineContent(index, e.target.value)}
                       onKeyDown={(e) => handleKeyDown(e, index)}
-                      className="w-full p-1 border-none focus:ring-0 focus:outline-none resize-none min-h-[24px]"
+                      className="w-full p-1 border border-gray-300 rounded focus:ring-1 focus:ring-blue-500 focus:border-blue-500 focus:outline-none resize-none min-h-[24px] bg-white"
                       rows="1"
                       placeholder={index === 0 ? "Start typing here..." : ""}
                     />
